@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bes42jlmq476m"]
+
+[ext_resource type="Script" uid="uid://cquniq11pa4vr" path="res://fhc.gd" id="1_f6txu"]
+[ext_resource type="Texture2D" uid="uid://bxmi1m88kqbab" path="res://logo.png" id="2_vpx1b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fph28"]
+radius = 88.02273
+
+[node name="FHC" type="Node2D" unique_id=1439266970]
+texture_filter = 1
+scale = Vector2(0.15, 0.15)
+script = ExtResource("1_f6txu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=516556989]
+scale = Vector2(0.352, 0.352)
+texture = ExtResource("2_vpx1b")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1105383575]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2123326421]
+shape = SubResource("CircleShape2D_fph28")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
